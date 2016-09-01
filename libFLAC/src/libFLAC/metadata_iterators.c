@@ -312,8 +312,9 @@ FLAC_API FLAC__bool FLAC__metadata_get_picture(const char *filename, FLAC__Strea
 				obj->data.picture.width <= max_width &&
 				obj->data.picture.height <= max_height &&
 				obj->data.picture.depth <= max_depth &&
-				obj->data.picture.colors <= max_colors &&
-				(area > max_area_seen || (area == max_area_seen && obj->data.picture.depth > max_depth_seen))
+				obj->data.picture.colors <= max_colors
+//               &&
+//				(area > max_area_seen || (area == max_area_seen && obj->data.picture.depth > max_depth_seen))
 			) {
 				if(*picture)
 					FLAC__metadata_object_delete(*picture);
